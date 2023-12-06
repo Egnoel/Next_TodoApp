@@ -10,7 +10,7 @@ interface TodoType{
 
 const Todo = ({title, completed}:TodoType) => {
   return (
-    <div className='px-2 flex flex-row h-12 justify-between items-center text-center'>
+    <div className='px-2 flex flex-row h-12 justify-between items-center text-center hover:cursor-pointer'>
                 <div className='flex gap-2 flex-row items-center'>
                 <div className={`w-6 h-6 rounded-full border-white border ${completed?'flex items-center justify-center bg-gradient-to-r from-[#55DDFF] to-[#C058F3]':''}`}>
                 {

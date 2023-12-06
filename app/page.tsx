@@ -43,7 +43,7 @@ export default function Home() {
         />
       </div>
       <div className='h-2/3 bg-black flex items-center justify-center text-white relative'>
-        <div className='z-10 text-center absolute top-[-200px] w-[90%] h-[70%]'>
+        <div className='z-10 text-center absolute top-[-200px] w-[90%] h-[70%] sm:w-[60%]'>
           <div className='flex flex-col h-full gap-6 items-center'>
             <div className='flex justify-between flex-row w-full h-8'>
               <h1>TODO</h1>
@@ -60,15 +60,20 @@ export default function Home() {
                 todos.map((todo, index) => <Todo key={index} {...todo} />)
               }
               <div className='px-2 flex flex-row h-12 justify-between items-center text-center py-2 text-[#5B5E7E]'>
-                <span>
+                <span className='hover:text-[#E3E4F1] hover:cursor-pointer'>
                   5 items left
                 </span>
-                <span>
+                <div className='bg-[#25273D] sm:flex flex-row items-center justify-center gap-6 rounded-s-lg text-[#5B5E7E] font-bold hidden'>
+              <span className='text-[#3A7CFD] hover:text-[#E3E4F1] hover:cursor-pointer'>All</span>
+              <span className='hover:text-[#E3E4F1] hover:cursor-pointer'>Active</span>
+              <span className='hover:text-[#E3E4F1] hover:cursor-pointer'>Completed</span>
+            </div>
+                <span className='hover:text-[#E3E4F1] hover:cursor-pointer'>
                   Clear Completed
                 </span>
               </div>
             </div>
-            <div className='bg-[#25273D] w-full flex flex-row items-center justify-center gap-6 py-4 rounded-s-lg text-[#5B5E7E] font-bold'>
+            <div className='bg-[#25273D] w-full flex flex-row items-center justify-center gap-6 py-4 rounded-s-lg text-[#5B5E7E] font-bold sm:hidden'>
               <span className='text-[#3A7CFD]'>All</span>
               <span>Active</span>
               <span>Completed</span>
