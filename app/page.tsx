@@ -5,6 +5,32 @@ import Todo from './components/Todo'
 
 
 export default function Home() {
+  const todos =[
+    {
+      title: "Complete Online JavaScript Course",
+      completed: true
+    },
+    {
+      title: "Jog around the park 3x",
+      completed: false
+    },
+    {
+      title: "10 minutes meditation",
+      completed: false
+    },
+    {
+      title: "Read for 1 hour",
+      completed: false
+    },
+    {
+      title: "Pick up groceries",
+      completed: false
+    },
+    {
+      title: "Complete Todo App on Frontend Mentor",
+      completed: false
+    },
+  ]
   return (
     <main className="flex min-h-screen flex-col">
       <div className='h-1/3 relative'>
@@ -30,13 +56,10 @@ export default function Home() {
               <input type="text" name="" id="" placeholder='Create a new todo...' className='h-6 border-none bg-[#25273D] text-white' />
             </div>
             <div className='bg-[#25273D] w-full flex flex-col  divide-y divide-[#979797] gap-1 rounded-s-lg'>
-              <Todo title="Complete Online JavaScript Course" completed />
-              <Todo title="Jog around the park 3x" completed />
-              <Todo title="10 minutes meditation" completed />
-              <Todo title="Read for 1 hour" completed />
-              <Todo title="Pick up groceries" completed />
-              <Todo title="Complete Todo App on Frontend Mentor" completed />
-              <div className='px-2 flex flex-row h-12 justify-between items-center text-center py-2'>
+              {
+                todos.map((todo, index) => <Todo key={index} {...todo} />)
+              }
+              <div className='px-2 flex flex-row h-12 justify-between items-center text-center py-2 text-[#5B5E7E]'>
                 <span>
                   5 items left
                 </span>
@@ -45,8 +68,8 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div className='bg-[#25273D] w-full flex flex-row items-center justify-center gap-6 py-4 rounded-s-lg'>
-              <span>All</span>
+            <div className='bg-[#25273D] w-full flex flex-row items-center justify-center gap-6 py-4 rounded-s-lg text-[#5B5E7E] font-bold'>
+              <span className='text-[#3A7CFD]'>All</span>
               <span>Active</span>
               <span>Completed</span>
             </div>
