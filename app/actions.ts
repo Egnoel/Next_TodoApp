@@ -8,28 +8,28 @@ export interface TodoType{
 
 export const getTodosFromServer = async (completed?: boolean) => {
     const url = completed !== undefined
-      ? `http://localhost:8080/todos?completed=${completed}`
-      : 'http://localhost:8080/todos';
+      ? `https://todobackend-rvy6.onrender.com/todos?completed=${completed}`
+      : 'https://todobackend-rvy6.onrender.com/todos';
     const response = await axios.get<TodoType[]>(url);
     return response.data;
   };
 
 export const addTodoToServer = async(title: string)=>{
-    const response = await axios.post("http://localhost:8080/todos", { title });
+    const response = await axios.post("https://todobackend-rvy6.onrender.com/todos", { title });
     return response.data;
 }
 
 export const deleteTodoFromServer = async(id: string)=>{
-    const response = await axios.delete<TodoType>(`http://localhost:8080/todos/${id}`);
+    const response = await axios.delete<TodoType>(`https://todobackend-rvy6.onrender.com/todos/${id}`);
     return response.data;
 }
 
 export const updateTodoOnServer = async(todo: TodoType)=>{
-    const response = await axios.put<TodoType>(`http://localhost:8080/todos/${todo._id}`, todo);
+    const response = await axios.put<TodoType>(`https://todobackend-rvy6.onrender.com/todos/${todo._id}`, todo);
     return response.data;
 }
 
 export const deleteCompletedFromServer = async ()=>{
-    const response = await axios.delete<TodoType[]>(`http://localhost:8080/todos/completed`);
+    const response = await axios.delete<TodoType[]>(`https://todobackend-rvy6.onrender.com/todos/completed`);
     return response.data;
 }
