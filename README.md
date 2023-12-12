@@ -38,7 +38,7 @@ Users should be able to:
 
 - Solution URL: [Front-End](https://github.com/Egnoel/Next_TodoApp)
 - Solution URL: [Back-End](https://github.com/Egnoel/TodoApp-backend)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live](https://next-todo-app-egnoel.vercel.app/)
 
 ## My process
 
